@@ -58,3 +58,21 @@ class HistoriaForm(forms.ModelForm):
 		diagnostico=forms.CharField(widget=forms.Textarea)
 		fields = ['fecha_historia','diagnostico','tratamiento','paciente','medico']
 		# widgets = {
+
+class TurnoForm(forms.ModelForm):
+	"""docstring for OrganizacionForm"""
+	class Meta:
+		model = Turno		
+		fields = ('fecha','medico','paciente','organizacion')
+		#medico = forms.ModelChoiceField(label=u'Categoría', queryset = Medico.objects.all(), widget=forms.TextInput(attrs={'class':'form-control'}))
+		#paciente = forms.ModelChoiceField(label=u'Categoría', queryset = Paciente.objects.all())
+		#fecha = models.DateTimeField(default=datetime.now, blank=True)
+		#widgets = {
+		#'fecha': DateWidget(attrs={'id':"fecha"}, bootstrap_version=3),
+		#'medico': TextInput(attrs={'class':'form-control'}),
+		#'paciente': TextInput(attrs={'class':'form-control'}),
+		#'organizacion': TextInput(attrs={'class':'form-control'})	
+		#'fecha': TextInput(attrs={'class':'input-group date'})
+		
+		#}
+		#fecha = forms.DateField(widget=forms.SelectDateWidget())

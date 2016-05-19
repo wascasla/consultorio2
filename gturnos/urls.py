@@ -1,5 +1,5 @@
 from django.conf.urls import include, url
-from . import views
+from . import views,turnoViews
 
 urlpatterns = [
         url(r'^$', views.index),
@@ -12,6 +12,13 @@ urlpatterns = [
         # url(r'^persona/(?P<pk>[0-9]+)/edit/$', views.persona_edit, name='persona_edit'),
         # url(r'^persona/(?P<pk>[0-9]+)/$', views.persona_detail),
         # url(r'^persona/all/$', views.persona_all, name='persona_all'),
+
+        #Turnos
+        url(r'^turno/new/$', views.turno_new, name='turno_new'),
+
+        #Turnos
+        url(r'^turno/calendario/$', turnoViews.turnos_calendario, name='calendario'),
+
         #Paciente
         url(r'^paciente/new/$', views.paciente_new, name='paciente_new'),
         url(r'^paciente/(?P<pk>[0-9]+)/edit/$', views.paciente_edit, name='paciente_edit'),
