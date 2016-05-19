@@ -23,7 +23,8 @@ Administrar MEDICOS
                                         <th>Sexo</th>
                                         <th>Telefono</th>
                                         <th>fecha Nac</th>                                        
-                                        <th>Matricula</th>                                    
+                                        <th>Matricula</th>  
+                                        <th>Organizacion</th>                                   
                                         <th>Editar</th>
                                     </tr>
                                 </thead>
@@ -38,6 +39,7 @@ Administrar MEDICOS
                                         <td>{{med.telefono}}</td>
                                         <td>{{med.fecha_nac}}</td>
                                         <td>{{med.mat_profesional}}</td>
+                                        <td>{{med.organizaciones}}</td>
                                         <td><a href="{% url 'medico_edit' med.pk %}" class="btn btn-sm btn-primary">Editar</a></td>                                                
                                     </tr>                                   
                                   	{% endfor %}

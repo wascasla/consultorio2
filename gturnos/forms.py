@@ -39,7 +39,7 @@ class MedicoForm(forms.ModelForm):
 	"""docstring for OrganizacionForm"""
 	class Meta:
 		model = Medico
-		fields = ['apellido','nombres','dni','fecha_nac','domicilio','telefono','sexo','mat_profesional']
+		fields = ['apellido','nombres','dni','fecha_nac','domicilio','telefono','sexo','mat_profesional','organizaciones']
 		# widgets = {
 		# 'apellido': TextInput(attrs={'class':'form-control'}),
 		# 'nombres': TextInput(attrs={'class':'form-control'}),
@@ -63,7 +63,7 @@ class TurnoForm(forms.ModelForm):
 	"""docstring for OrganizacionForm"""
 	class Meta:
 		model = Turno		
-		fields = ('fecha','medico','paciente','organizacion')
+		fields = ('fecha','medico','paciente')
 		#medico = forms.ModelChoiceField(label=u'Categoría', queryset = Medico.objects.all(), widget=forms.TextInput(attrs={'class':'form-control'}))
 		#paciente = forms.ModelChoiceField(label=u'Categoría', queryset = Paciente.objects.all())
 		#fecha = models.DateTimeField(default=datetime.now, blank=True)

@@ -25,9 +25,17 @@ class Especialidad(models.Model):
 	# mat_especialidad = models.IntegerField()
 	def __str__(self):
 		return self.nombre
+
+class Organizacion(models.Model):
+	nombre = models.CharField(max_length=100)
+	domicilio = models.CharField(max_length=200)
+	telefono = models.CharField(max_length=15)
+	def __str__(self):
+		return self.nombre
 		
 class Medico(Persona):
 	mat_profesional = models.IntegerField()	
+	organizaciones = models.ManyToManyField(Organizacion)
 
 class Rel_Med_Esp(models.Model):
 	mat_especialidad = models.IntegerField()
@@ -61,4 +69,4 @@ class Turno(models.Model):
 	# usuario = models.ForeignKey(Usuario)
 	fecha_inicio = models.DateTimeField()
 	fecha_fin = models.DateTimeField()
-	organizacion = models.ForeignKey(Organizacion)
+	#organizacion = models.ForeignKey(Organizacion)
